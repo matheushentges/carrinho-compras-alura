@@ -13,6 +13,11 @@ function adicionar() {
     let subtotal = quantidade * valorUnitario;
 
     let carrinho = document.getElementById('lista-produtos');
+
+    if (quantidade < 1) {
+        alert("Insira a quantidade de itens para prosseguir!");
+        return;
+    }
     carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
           <span class="texto-azul">${quantidade}</span> ${nomeProduto} <span class="texto-azul">R$${subtotal}</span>
         </section>`;
@@ -30,3 +35,4 @@ function limpar(){
     document.getElementById('valor-total').innerHTML = 'R$ 0';
     valorTotalCarrinho = 0;  
 };
+
